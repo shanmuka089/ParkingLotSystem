@@ -5,6 +5,9 @@ import com.lot.parking.entities.Payment;
 import com.lot.parking.service.CostCalculator;
 import com.lot.parking.service.ExitGate;
 import com.lot.parking.service.PaymentChannel;
+import com.lot.parking.service.PaymentChannelFactory;
+
+import java.util.logging.Logger;
 
 public class NormalExitGate extends ExitGate
 {
@@ -23,6 +26,8 @@ public class NormalExitGate extends ExitGate
     @Override
     public void processPayment(ParkingTicket parkingTicket, Payment payment)
     {
+
+        paymentChannel = PaymentChannelFactory.getPaymentChannel(payment.getPaymentMode());
         this.paymentChannel.processPayment(parkingTicket, payment);
     }
 

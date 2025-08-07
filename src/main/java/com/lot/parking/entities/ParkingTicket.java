@@ -4,16 +4,82 @@ import java.util.Date;
 
 public class ParkingTicket
 {
-    private String ticketId;
+    private final String ticketId;
     
-    private Integer spotId;
-    private String vehicleNumber;
-    private Integer floorNumber;
-    private Date entryTime;
+    private final Integer spotId;
+    private final String vehicleNumber;
+    private final Integer floorNumber;
+    private final Date entryTime;
     private Date exitTime;
     private double duration;
     
     private double amount;
+
+    public String getTicketId()
+    {
+
+        return ticketId;
+    }
+
+    public Integer getSpotId()
+    {
+
+        return spotId;
+    }
+
+    public String getVehicleNumber()
+    {
+
+        return vehicleNumber;
+    }
+
+    public Integer getFloorNumber()
+    {
+
+        return floorNumber;
+    }
+
+    public Date getEntryTime()
+    {
+
+        return entryTime;
+    }
+
+    public Date getExitTime()
+    {
+
+        return exitTime;
+    }
+
+    public double getDuration()
+    {
+
+        return duration;
+    }
+
+    public double getAmount()
+    {
+
+        return amount;
+    }
+
+    public void setExitTime(Date exitTime)
+    {
+
+        this.exitTime = exitTime;
+    }
+
+    public void setDuration(double duration)
+    {
+
+        this.duration = duration;
+    }
+
+    public void setAmount(double amount)
+    {
+
+        this.amount = amount;
+    }
 
     public ParkingTicket(String ticketId, Integer spotId, String vehicleNumber, Integer floorNumber, Date entryTime)
     {

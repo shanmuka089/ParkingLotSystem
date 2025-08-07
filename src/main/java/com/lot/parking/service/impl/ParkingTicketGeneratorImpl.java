@@ -17,7 +17,6 @@ public class ParkingTicketGeneratorImpl implements ParkingTicketGenerator
                 .setTicketId(parkingSpot.getParkingSpotId() + "#" + vehicle.getVehicleNumber())
                 .setSpotId(parkingSpot.getParkingSpotId())
                 .setVehicleNumber(vehicle.getVehicleNumber())
-                .setFloorNumber(parkingSpot.getFloorNumber())
                 .setEntryTime(new Date())
                 .setExitTime(null) // Exit time will be set later
                 .setDuration(0) // Duration will be calculated later

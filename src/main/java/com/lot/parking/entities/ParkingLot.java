@@ -3,6 +3,7 @@ package com.lot.parking.entities;
 import com.lot.parking.service.EntryGate;
 import com.lot.parking.service.ExitGate;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -17,11 +18,6 @@ public class ParkingLot
     private Map<Integer, EntryGate> entryGates;
     private Map<Integer, ExitGate> exitGates;
     private Map<Integer, ParkingFloor> parkingFloors;
-
-    public ParkingLot()
-    {
-        // Default constructor
-    }
     
     public ParkingLot(String name, String location, Map<Integer, EntryGate> entryGates, Map<Integer, ExitGate> exitGates) {
         this.name = name;
@@ -44,7 +40,8 @@ public class ParkingLot
         this.location = location;
     }
     public Map<Integer, ParkingFloor> getParkingFloors() {
-        return parkingFloors;
+        
+        return Collections.unmodifiableMap(parkingFloors);
     }
     public void addParkingFloor(ParkingFloor parkingFloor) {
         this.parkingFloors.put(parkingFloor.getFloorNumber(), parkingFloor);
@@ -54,6 +51,14 @@ public class ParkingLot
     }
     public ParkingFloor getParkingFloor(int floorNumber) {
         return this.parkingFloors.get(floorNumber);
+    }
+    
+    public EntryGate getEntryGate(int gateNumber) {
+        return entryGates.get(gateNumber);
+    }
+    
+    public ExitGate getExitGate(int gateNumber) {
+        return exitGates.get(gateNumber);
     }
 
 }
